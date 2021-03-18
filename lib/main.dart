@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
       // Replace the 3 second delay with your initialization code:
-      future: Future.delayed(Duration(seconds: 4)),
+      future: Future.delayed(Duration(seconds: 3)),
       builder: (context, AsyncSnapshot snapshot) {
         // Show splash screen while waiting for app resources to load:
         if (snapshot.connectionState == ConnectionState.waiting) {
@@ -44,11 +44,11 @@ class Splash extends StatelessWidget {
               bool? wasSynchronouslyLoaded) {
             return AnimatedAlign(
               alignment: frame == null ? Alignment.center : Alignment.topCenter,
-              duration: const Duration(milliseconds: 1500),
+              duration: const Duration(milliseconds: 1800),
               curve: Curves.easeOut,
               child: AnimatedOpacity(
                 opacity: frame == null ? 0 : 1,
-                duration: const Duration(milliseconds: 1500),
+                duration: const Duration(milliseconds: 1800),
                 curve: Curves.easeOut,
                 child: child,
               ),
